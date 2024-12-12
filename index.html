@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alan Walker Fan</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Include GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="dark"></div>
+    <video autoplay muted loop id="myVideo">
+      <source src="./video/alanWalkerBG.mp4" type="video/mp4" />
+    </video>
+    <nav class="navbar">
+      <img src="./photo/logo1.png" alt="" class="logo" />
+      <h1 class="navtext text">TOUR</h1>
+      <h1 class="navtext">FOLLOW ME</h1>
+    </nav>
+    <main>
+      <div class="right">
+        <img src="./photo/alanWalker1.png" alt="" class="img mainimg" />
+        <h1 class="navtext name">ALAN</h1>
+        <h1 class="navtext name last">WALKER</h1>
+      </div>
+      <div class="songs">
+        <h1 class="navtext">Latest Music</h1>
+        <!-- Song One -->
+        <a href="https://www.youtube.com/watch?v=tu4HfcmMn1E">
+          <div class="card">
+            <img src="./photo/songHero.jpg" class="cardImage" alt="" />
+            <button class="playbtn">
+              <img src="./assets/Asset 2.svg" class="playIcon" alt="" />
+            </button>
+            <h3 class="navtext cardTitle">
+              Alan Walker & Sasha Alex Sloan - Hero
+            </h3>
+          </div>
+        </a>
+        <!-- Song Two -->
+        <a href="https://www.youtube.com/watch?v=rgOSHr10lO0">
+          <div class="card">
+            <img src="./photo/songNotYou.jpg" class="cardImage" alt="" />
+            <button class="playbtn">
+              <img src="./assets/Asset 2.svg" class="playIcon" alt="" />
+            </button>
+            <h3 class="navtext cardTitle">
+              Alan Walker x Emma Steinbakken - Not You
+            </h3>
+          </div>
+        </a>
+        <!-- Song Three -->
+        <a href="https://www.youtube.com/watch?v=dhYOPzcsbGM">
+          <div class="card">
+            <img src="./photo/songOnMyWay.jpeg" class="cardImage" alt="" />
+            <button class="playbtn">
+              <img src="./assets/Asset 2.svg" class="playIcon" alt="" />
+            </button>
+            <h3 class="navtext cardTitle">
+              Alan Walker, Sabrina Carpenter & Farruko - On My Way
+            </h3>
+          </div>
+        </a>
+      </div>
+    </main>
+
+    <script>
+      window.addEventListener("load", function () {
+        const alanimg = document.querySelector(".mainimg");
+        const timeline = gsap.timeline();
+
+        timeline
+          .fromTo(
+            document.querySelector(".name"),
+            { x: "-200%" },
+            { x: "0%", duration: 1, ease: "power2.out" }
+          )
+          .fromTo(
+            document.querySelector(".last"),
+            { x: "-200%" },
+            { x: "0%", duration: 1, ease: "power2.out" },
+            "-=1"
+          )
+          .fromTo(
+            alanimg,
+            { x: "-120%" },
+            { x: "0%", duration: 0.8, ease: "power2.out" },
+            "-=0.5"
+          )
+          .fromTo(
+            document.querySelector(".navbar"),
+            { y: "-100%", opacity: 0 },
+            { y: "0%", opacity: 1, duration: 1, ease: "power2.out" },
+            "-=1"
+          )
+          .fromTo(
+            document.querySelector(".songs"),
+            { x: "+100%", opacity: 0 },
+            { x: "0%", opacity: 1, duration: 0.7, ease: "power2.out" },
+            "-=1"
+          )
+          .fromTo(
+            document.querySelectorAll(".card"),
+            { x: "+100%", opacity: 0 },
+            { x: "0%", opacity: 1, duration: 0.6, ease: "power2.out" },
+            "-=0.5"
+          );
+      });
+    </script>
+  </body>
+</html>
